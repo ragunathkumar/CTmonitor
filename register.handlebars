@@ -1,0 +1,73 @@
+          <h5>Sign Up</h5>
+		  
+{{#if errors}}
+	{{#each errors}}
+		<div class="alert alert-danger">{{msg}}</div>
+	{{/each}}
+{{/if}}
+              <form ng-app="" method="post" action="/users/register" name="frmname">
+                <div class="row">
+                  <div class="form-group col-md-6">
+
+                    <label for="form1-name" class="col-form-label">Name</label>
+                    <input type="text" class="form-control" pattern="^([a-zA-Z])*$" ng-minlength="4"ng-maxlength="28"  id="username" name="username" placeholder="Name"ng-model="username" required>
+                   <div>
+		<span ng-show="frmname.username.$dirty && frmname.username.$error.required">required!</span>
+		<span ng-show="frmname.username.$dirty && frmname.username.$error.maxlength">too long!</span>
+		<span ng-show="frmname.username.$dirty && frmname.username.$error.pattern">only Alphabetic characters can be used!</span>
+		</div>
+                    <label for="form1-email" class="col-form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Email" ng-model="email"pattern="^[a-zA-Z][-_.a-zA-Z0-9]{5,29}@dxc.com$" required>
+                    <div>
+		<span ng-show="frmname.email.$dirty && frmname.email.$error.required">required!</span>
+		<span ng-show="frmname.email.$dirty && frmname.email.$error.email">Not a validate email!</span>
+    	<span ng-show="frmname.email.$dirty && frmname.email.$error.pattern">enter  valid DXC email!</span>
+		</div>
+                    <label for="form1-password">Password</label>
+                    <input type="password" class="form-control" id="password"  name="password" placeholder="Password" ng-model="password" pattern="^(?=[^\s]*[a-zA-Z])(?=[^\s]*[\d])[^\s]*$" required>
+                    <div>
+                   <span ng-show="frmname.pass.$dirty && frmname.pass.$error.required">required!</span>
+		<span ng-show="frmname.password.$dirty && frmname.password.$error.maxlength">too long!</span>
+		<span ng-show="frmname.password.$dirty && frmname.password.$error.minlength">too short!</span>
+		<span ng-show="frmname.password.$dirty && frmname.password.$error.pattern">password must contain a combination of letters, numbers and special characters.</span>
+
+                    </div>
+                    <label for="form1-password" >Confirm Password</label>
+                    <input type="password" class="form-control" id="password2" name="password2" placeholder="Confirm Password" required>
+                    <label for="form1-email" class="col-form-label">Employee ID</label>
+                    <input type="text" class="form-control" id="employeeid" name="employeeid" placeholder="Employee ID"ng-model="employeeid" maxlength="8" minlength="4" pattern="^([0-9])*$"required>
+                    <div>
+
+                      <span ng-show="frmname.employeeid.$dirty && frmname.employeeid.$error.required">required!</span>
+	  <span ng-show="frmname.employeeid.$dirty && frmname.employeeid.$error.pattern">only numeric characters can be used!</span> 
+	  <span ng-show="frmname.employeeid.$dirty && frmname.employeeid.$error.maxlength">too long!</span> 
+                    </div>
+                    <label for="form1-phone" class="col-form-label">Phone Number</label>
+                    <input type="text" class="form-control" id="phonenumber" name="phonenumber"ng-model="phonenumber"maxlength="10" minlength="10" pattern="^([0-9])*$" placeholder="Phone Number" required>
+                   <div>
+                      <span ng-show="frmname.phonenumber.$dirty && frmname.phonenumber.$error.required">required!</span>
+	  <span ng-show="frmname.phonenumber.$dirty && frmname.phonenumber.$error.pattern">only numeric characters can be used!</span> 
+	  <span ng-show="frmname.phonenumber.$dirty && frmname.phonenumber.$error.maxlength">too long!</span> 
+                   </div>
+                  
+                    <label for="form1-state">Select Domain</label>
+                    <select class="custom-select" id="domain" name ="domain">
+                      <option value="" selected>Choose One</option>
+                      <option value="Java">Java</option>
+                      <option value="SAP">SAP</option>
+                      <option value="Webpage Development">Webpage Development</option>
+                      <option value="testing">Testing</option>
+                      <required>
+                    </select>
+                  </div>
+               </div>
+			   <div class="mb-5">
+          <!-- Trigger -->
+          <button type="submit"ng-disabled="frmname.$invalid" class="btn btn-primary btn-pill btn-lg d-table ml-auto mr-auto" data-toggle="modal" data-target="#exampleModal">
+             Submit
+          </button>
+          </body>
+		  </form>
+		  </div>
+			
+                

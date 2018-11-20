@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>CT Monitor</title>
+  <meta name="description" content="A free and modern UI toolkit for web makers based on the popular Bootstrap 4 framework.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/shards.min.css?v=2.0.1">
+  <link rel="stylesheet" href="/css/shards-demo.min.css?v=2.0.1">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>           
+</head>
+<body>
+   <img src="/images/demo/shard-1-5x-3.png" alt="Shard" class="shard">
+	 	<nav class="navbar navbar-expand-lg navbar-dark bg-secondary mb-4">
+          <img src="/images/demo/shards-logo.svg" alt="Example Navbar 1" class="mr-2" height="30">
+          <a class="navbar-brand" href="log.html">CT Monitor</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown-2" aria-controls="navbarNavDropdown-2"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse mr-auto" id="navbarNavDropdown-2">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="/">Home
+                  <span class="sr-only">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                  {{#if admin}}
+              dsfjsdkfj
+        <li class="nav-item">
+            <a class="nav-link" href="/admin/logouts">Logout</a>
+          </li>
+          {{/if}}
+          {{#if user}}
+                <a class="nav-link"  href="/events/createEvent" name="createEvent">Create Events </a>
+           </li>
+           {{#customifAnsweredUser user testAnsPeoples}}
+           {{else}}
+          <li class="nav-item">
+                <a class="nav-link" href="/tests/displayTest">Go to test</a>
+          </li>
+          {{/customifAnsweredUser}}
+
+           {{#customifEventCreator user status}}
+           <li class="nav-item">
+                <a class="nav-link" href="/tests/displaystatus">A/D status</a>
+          </li>
+       {{/customifEventCreator}}
+        </ul>
+       
+          <ul class="navbar-nav navbar-right">
+            <li class="nav-item">
+            <a class="nav-link" href="/">{{user}}</a>
+          </li>
+        
+       
+        <li class="nav-item">
+            <a class="nav-link" href="/users/logout">Logout</a>
+          </li>
+         
+       </ul>
+
+      {{else}}
+          <li class="nav-item">
+            <a class="nav-link" href="/users/register">Register</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/users/login">Login</a>
+          </li>
+          
+      </ul>
+      {{/if}}
+     
+          <!-- <li class="nav-item">
+            <a class="nav-link disabled" href="/">Disabled</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown01">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form> -->
+      </div>
+    </nav>
+    <main role="main">
+
+      <div class="example col-lg-8 col-md-10 ml-auto mr-auto"> 
+        <!-- Example row of columns -->
+       <div class="row mb-5"> 
+
+          <div class="col-md-10">
+
+            {{#if success_msg}}
+                <div class="alert alert-success">{{success_msg}}</div>
+            {{/if}}
+
+            {{#if error_msg}}
+                <div class="alert alert-danger">{{error_msg}}</div>
+            {{/if}} 
+            
+            {{#if error}} 
+                <div class="alert alert-danger">{{error}}</div>
+            {{/if}}
+
+            {{{body}}}
+            </div>
+         </div>
+
+       
+
+      </div> <!-- /container -->
+
+    </main>
+
+    <!--<footer class="container">
+    	 <hr>
+      <p>&copy; Loginapp 2017-2018</p>
+    </footer>-->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+
+</body>
+</html>

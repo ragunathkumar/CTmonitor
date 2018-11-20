@@ -1,0 +1,43 @@
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>   
+          <h5> ADMIN Login</h5>
+              <form method="post" action="/admin/adminse" name="frmlogin">
+                <div class="row">
+                  <div class="form-group col-md-6">
+
+                    <body ng-app="">
+                    <label for="form1-email" class="col-form-label">Username</label>
+                    <input type="text" maxlength="40" class="form-control" id="username" name="username" placeholder="username"  pattern="^([a-zA-Z])*$" 
+   ng-model="employeeid" required>
+  <div>
+    <span ng-show="frmlogin.username.$dirty && frmlogin.username.$error.required">required!</span>
+    <span ng-show="frmlogin.username.$dirty && frmlogin.username.$error.pattern">only alpha characters can be used!</span> 
+    <span ng-show="frmlogin.username.$dirty && frmlogin.username.$error.maxlength">too long!</span> 
+    </div>
+                    <label for="form1-password">Password</label>
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Password"  pattern="^(?=[^\s]*[a-zA-Z])(?=[^\s]*[\d])[^\s]*$"
+    ng-maxlength="15"
+    ng-minlength="4"
+    ng-model="password" required>
+      <div>
+    <span ng-show="frmlogin.password.$dirty && frmlogin.password.$error.required">required!</span>
+    <span ng-show="frmlogin.password.$dirty && frmlogin.password.$error.pattern">password must contain a combination of letters, numbers and special characters.</span>
+       <span ng-show="frmlogin.password.$dirty && frmlogin.password.$error.maxlength">too long!</span>  
+       
+    </div>
+                    
+                   </div>
+                   </div>
+
+                  
+                   
+                  </div>
+               </div>
+                <div class="mb-5">
+          <!-- Trigger -->
+          <button type="submit" ng-disabled="frmlogin.$invalid"class="btn btn-primary btn-pill btn-lg d-table ml-auto mr-auto" data-toggle="modal" data-target="#exampleModal">
+             Login !
+          </button>
+      </div>
+      </body>
+  </form>
+      </div>

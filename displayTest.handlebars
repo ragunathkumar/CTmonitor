@@ -1,0 +1,23 @@
+      <h3>CT MONITOR TEST</h3>
+    
+    <form action="/answers/answerSave" method="post">
+    <ol>
+    {{#each tests}}
+    
+
+   <li> <i>{{questions}}</i></li>
+    
+    
+    
+    <input type="radio"required name="{{id}}" value="{{options.[0]}}">&nbsp;&nbsp;{{options.[0]}}<br>
+    <input type="radio" required name="{{id}}"value="{{options.[1]}}">&nbsp;&nbsp;{{options.[1]}}<br>
+    <input type="radio" required name="{{id}}"value="{{options.[2]}}">&nbsp;&nbsp;{{options.[2]}}<br>
+    <input type="radio"required name="{{id}}" value="{{options.[3]}}">&nbsp;&nbsp;{{options.[3]}}<br>
+    
+         <br>
+    
+
+       {{/each}}
+         </ol>
+        <input type="submit"class="btn btn-primary btn-pill btn-lg d-table ml-auto mr-auto" data-toggle="modal" data-target="#exampleModal" name="submit">
+       </form>

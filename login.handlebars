@@ -1,0 +1,40 @@
+          <h5>Login</h5>
+              <form ng-app="" method="post" action="/users/login" name="frmlogin">
+                <div class="row">
+                  <div class="form-group col-md-6">
+                    <label for="form1-email" class="col-form-label">EmployeeID</label>
+                    <input type="text" maxlength="8" class="form-control" id="username" name="username" placeholder="EmployeeID"  pattern="^([0-9])*$" ng-maxlength="8"
+	 ng-model="employeeid" required>
+  <div>
+	  <span ng-show="frmlogin.username.$dirty && frmlogin.username.$error.required">required!</span>
+	  <span ng-show="frmlogin.username.$dirty && frmlogin.username.$error.pattern">only numeric characters can be used!</span> 
+	  <span ng-show="frmlogin.username.$dirty && frmlogin.username.$error.maxlength">too long!</span> 
+		</div>
+                    <label for="form1-password">Password</label>
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Password"  pattern="^(?=[^\s]*[a-zA-Z])(?=[^\s]*[\d])[^\s]*$"
+	  ng-maxlength="15"
+	  ng-minlength="4"
+	  ng-model="password" required>
+      <div>
+		<span ng-show="frmlogin.password.$dirty && frmlogin.password.$error.required">required!</span>
+		<span ng-show="frmlogin.password.$dirty && frmlogin.password.$error.pattern">password must contain a combination of letters, numbers and special characters.</span>
+       <span ng-show="frmlogin.password.$dirty && frmlogin.password.$error.maxlength">too long!</span>	
+	     
+		</div>
+                    
+                   </div>
+                   </div>
+
+                  
+                   
+                  </div>
+               </div>
+                <div class="mb-5">
+          <!-- Trigger -->
+          <button type="submit" ng-disabled="frmlogin.$invalid"class="btn btn-primary btn-pill btn-lg d-table ml-auto mr-auto" data-toggle="modal" data-target="#exampleModal">
+             Login !
+          </button>
+      </div>
+  </form>
+      </div>
+

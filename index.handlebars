@@ -1,0 +1,51 @@
+
+<h3> Welcome to CT Monitor Portal</h3>
+<ol>
+   
+    {{#each users}}
+    {{#customifDecline ../user DeclinedMebers}}
+    {{else}}
+    <li>
+        <form style = "display:inline" action ='/events/getEvent' method='post'>
+        <table>
+        <tr>
+        <th style="width:33.33%"><label><strong >Event Topic : </strong></label></th> 
+        <th style="width:33.33%"><label><strong>Timings : </strong></label></th>
+        <th style="width:33.33%"><label><strong>Location : </strong></label></th> 
+        </tr>
+        <tr>
+        <td><input type = "text" value= "{{topic}}" name ="{{topic}}" style="border:0px" readonly="readonly"></td>
+        <td>{{timings}}</td>
+        <td>{{location}}</td></tr>
+        </table>
+        <br/>
+        <table width=50%>
+        <th><label><strong>Meeting Room : </strong></label> </th>
+        <th><label><strong>test : </strong></label></th>
+        <tr>
+         <td>{{room}}</td>
+         <td>{{test}}</td>  
+        </table>
+    {{#customifCreator ../user createrName}}
+    <td><strong>You are the creator of this event</strong></td></tr>
+    {{else}}
+        {{#customifAccept ../user AcceptedMembers}}
+        <td><strong>Thanks for Accepting Invitation</strong></td></tr>
+        {{else}}
+        <tr><td><button type = "submit" name = 'accepted_{{_id}}' value = "accept">Accept</button></td>
+       
+         &nbsp;&nbsp;&nbsp;<td><button type = "submit" name = 'declined{{_id}}' value = "decline">Decline</a></button></td></tr>
+        {{/customifAccept}}
+        {{/customifCreator}}
+       
+        </table>
+        <br>
+        <br>
+        </form>
+        <hr>
+    </li>
+    {{/customifDecline}}
+    {{/each}}
+  
+</ol>
+

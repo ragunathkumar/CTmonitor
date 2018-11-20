@@ -1,0 +1,43 @@
+
+ <ol>
+     <h3><caption>All Events</caption></h3>
+    {{#each rest}}
+    <li>
+        <div style="display:inline">
+        <table width=50%>
+        <th><label><strong >Event Creator : </strong></label></th> 
+        <th><label><strong>Topic : </strong></label></th>
+        <th><label><strong>Date : </strong></label></th> 
+        <tr><td>{{createrName}}</td>
+        <td>{{topic}}</td>
+        <td>{{date}}</td>
+        </tr>
+        </table>
+        </div>
+    </li>
+    <hr>
+    {{/each}}
+    </ol> 
+    <br/>
+<ul>
+     <h3><caption>Last Test Report</caption></h3>
+    <li>
+        <div style="display:inline"></div>
+    <table width=50%>
+            <th><label>Employees Attende:d</label></th>
+            <th><label>Marks Scored by</label></th>
+             <tr>
+                
+            {{#each employeeid}}
+                <td>{{@index}}{{this}}</td><br>
+                <br>
+            {{/each}}
+            {{#each count}}
+                <td>{{@index}} {{this}} </td>
+            {{/each}}    
+            </tr>
+            
+        </table>
+        </div>
+        </li>
+</ul>

@@ -1,0 +1,45 @@
+<h5>Create an Event</h5>
+
+<form ng-app="" method="post" action="/events/addEvent" name="frmname">
+<div class="row">
+	
+<div class="form-group col-md-6">
+
+	<div class="form-group">
+		<label>Event Topic</label>
+		<input type="text" class="form-control" placeholder="enter your event name"  name="event_topic" required>
+	</div>
+	<div class="form-group">
+		<label>Event Timings</label>
+		<input type="time" class="form-control" placeholder="enter your timings" name="event_timings" required>
+	</div>
+	<div class="form-group">
+		<label>Event Date</label>
+		<input type="date" class="form-control" placeholder="enter your date" name="event_date" required>
+	</div>
+	<div class="form-group">
+		<label>Event Location</label>
+		<input type="text" class="form-control" placeholder="enter your location" name="event_location" required>
+	</div>
+		<div class="form-group">
+		<label>Meeting Room Number</label>
+		<input type="text" class="form-control" placeholder="enter your room no" name="event_room_number"id="event_room_number"maxlength="3"ng-model="roomno" pattern="^([0-9.])*$" required>
+	
+		 <span ng-show="frmname.event_room_number.$dirty && frmname.event_room_number.$error.required">required!</span>
+	  <span ng-show="frmname.event_room_number.$dirty && frmname.event_room_number.$error.pattern">only numeric characters can be used!</span> 
+	  <span ng-show="frmname.event_room_number.$dirty && name.event_room_number.$error.maxlength">too long!</span> 
+	</div>
+	<div class="form-group">
+		<label>Test:</label><br/>
+		<input type="radio"   name="event_test" value="Yes" required>Yes&nbsp;&nbsp;&nbsp;   
+		<input type="radio"  name="event_test" value="No" required>No
+	</div>
+	</div>
+	</div>
+	 <div class="mb-5">
+	<button type="submit" ng-disabled="frmname.$invalid" class="btn btn-primary btn-pill btn-lg d-table ml-auto mr-auto" data-toggle="modal" data-target="#exampleModal">
+             Create Event
+          </button>
+	</div>
+	</body>
+</form>
